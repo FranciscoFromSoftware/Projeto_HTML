@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    /* Exemplo para telas menores (até 768px de largura) */
+    @media (max-width: 768px) {
+      .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adapta o número de colunas */
+      }
+    }
+
+    /* Exemplo para telas um pouco maiores (até 1024px de largura) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .skills-container {
+        grid-template-columns: repeat(3, 1fr); /* Mostra 3 colunas em tablets */
+      }
+    }
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
@@ -14,46 +28,78 @@
       color: #e0e0e0;
     }
 
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      grid-gap: 1rem;
+      margin: 0 auto;
+      padding: 1rem 1rem;
+      min-height: 100vh;
+    }
+
     header {
       background: linear-gradient(to right, #00c6ff, #0072ff);
-      padding: 2rem;
-      text-align: center;
+      padding: 1rem;
       color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header h1 {
       font-family: 'Orbitron', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 0;
     }
 
     header p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto;
+      font-size: 0.9rem;
+      max-width: 600px;
+      margin: 0;
+    }
+
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    header .connect-links {
+      text-align: right;
+    }
+
+    header .connect-links h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    header .connect-links img {
+      width: 80px;
+      margin-left: 0.3rem;
     }
 
     main {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+      padding: 1rem;
     }
 
     h2 {
       font-family: 'Orbitron', sans-serif;
       color: #00c6ff;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2rem; /* Aumentei a margem inferior do título */
     }
 
     .skills-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto auto;
+      gap: 2rem; /* Aumentei o gap para 2rem */
+      padding: 1rem;
       margin: 0 auto;
     }
-
+    
     .skill-card {
       background-color: #1a1d29;
       border-radius: 12px;
@@ -62,15 +108,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      padding: 0.5rem;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
+      min-height: 150px;
+      margin-bottom: 1rem;
     }
 
     .skill-card canvas {
-      width: 100px !important;
-      height: 100px !important;
-      margin-bottom: 0.5rem;
+      width: 180px !important;
+      height: 140px !important;
+      margin-bottom: 0.3rem;
     }
 
     .skill-percentage {
@@ -79,107 +127,91 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: #ffffff;
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       font-weight: bold;
       z-index: 3;
     }
 
     .skill-label {
       color: #e0e0e0;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       text-align: center;
-      margin-top: 0.5rem;
+      margin-top: 0.3rem;
+      word-break: break-word;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
       background-color: #10131c;
-      margin-top: 3rem;
+      margin-top: 1rem;
     }
 
     footer h2 {
       color: #00c6ff;
+      font-size: 1.2rem;
     }
 
     footer div {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
 
     footer a {
-      margin: 0 1rem;
-      text-decoration: none;
+      margin: 0 0.5rem;
     }
 
     footer img {
-      width: 40px;
+      width: 30px;
       height: auto;
     }
   </style>
-<header style="padding: 2rem;">
-    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto;">
+</head>
+
+<body>
+  <div class="container">
+    <header>
       <div style="display: flex; align-items: center;">
-        <img src="sua-foto.jpg" alt="Sua Foto" style="width: 80px; height: 80px; border-radius: 50%; margin-right: 1rem;">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHNnNd1vxq-Dg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701051341167?e=1750896000&v=beta&t=5LgcJ_tXUtMifjwZQM3ZG_RCDvAPvK8HNIMiMG0She0" alt="Sua Foto">
         <div>
-          <h1 style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin-bottom: 0.2rem; color: white;">Francisco Henrique Lomas</h1>
-          <p style="font-size: 1rem; color: white; margin-bottom: 0;">
-            Apaixonado por ficção científica futurista e cyberpunk... (trecho da sua descrição)
-          </p>
+          <h1>Francisco Henrique Lomas</h1>
+          <p>Apaixonado por ficção científica futurista e cyberpunk, sou fascinado por mundos onde tecnologia e humanidade se encontram de formas inesperadas. A inovação me motiva, sempre buscando explorar novas tendências e avanços tecnológicos. Com um olhar analítico e estratégico, tenho um grande interesse por estatística e análise de dados, transformando informações em conhecimento valioso. Seja desvendando padrões ocultos ou imaginando sociedades futurísticas, estou sempre imerso na conexão entre dados, ciência e imaginação.</p>
         </div>
       </div>
-      <div style="text-align: right;">
-        <h2 style="font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Conecte-se Comigo</h2>
+      <div class="connect-links">
+        <h2>Conecte-se Comigo</h2>
         <div>
-          <a href="https://github.com/FranciscoFromSoftware" target="_blank" style="margin-left: 0.5rem;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30">
+          <a href="https://github.com/FranciscoFromSoftware" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
           </a>
-          <a href="https://www.kaggle.com/franciscohlomas" target="_blank" style="margin-left: 0.5rem;">
-            <img src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle" width="30">
+          <a href="https://www.kaggle.com/franciscohlomas" target="_blank">
+            <img src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
           </a>
-          <a href="https://www.linkedin.com/in/francisco-henrique-lomas/" target="_blank" style="margin-left: 0.5rem;">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30">
+          <a href="https://www.linkedin.com/in/francisco-henrique-lomas/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
           </a>
-          <a href="https://rpubs.com/XscientFHL" target="_blank" style="margin-left: 0.5rem;">
-            <img src="https://www.r-project.org/Rlogo.png" alt="RPubs" width="30">
+          <a href="https://rpubs.com/XscientFHL" target="_blank">
+            <img src="https://www.r-project.org/Rlogo.png" alt="RPubs">
           </a>
-          </div>
+        </div>
       </div>
-    </div>
-  </header>
-  
-  <main>
-    <h2>Habilidades Técnicas</h2>
-    <div class="skills-container">
-      <div class="skill-card"><canvas id="chartPython"></canvas></div>
-      <div class="skill-card"><canvas id="chartPowerBI"></canvas></div>
-      <div class="skill-card"><canvas id="chartPowerApps"></canvas></div>
-      <div class="skill-card"><canvas id="chartPowerAutomate"></canvas></div>
-      <div class="skill-card"><canvas id="chartExcel"></canvas></div>
-      <div class="skill-card"><canvas id="chartSQL"></canvas></div>
-      <div class="skill-card"><canvas id="chartSharepoint"></canvas></div>
-      <div class="skill-card"><canvas id="chartR"></canvas></div>
-      <div class="skill-card"><canvas id="chartPentaho"></canvas></div>
-      <div class="skill-card"><canvas id="chartFigma"></canvas></div>
-    </div>
-  </main>
+    </header>
 
-  <footer>
-    <h2>Conecte-se Comigo</h2>
-    <div>
-      <a href="https://github.com/FranciscoFromSoftware" target="_blank">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-      </a>
-      <a href="https://www.kaggle.com/franciscohlomas" target="_blank">
-        <img src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
-      </a>
-      <a href="https://www.linkedin.com/in/francisco-henrique-lomas/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-      </a>
-      <a href="https://rpubs.com/XscientFHL" target="_blank">
-        <img src="https://www.r-project.org/Rlogo.png" alt="RPubs">
-      </a>
-    </div>
-  </footer>
+    <main>
+      <h2>Habilidades Técnicas</h2>
+      <div class="skills-container">
+        <div class="skill-card"><canvas id="chartPython"></canvas></div>
+        <div class="skill-card"><canvas id="chartPowerBI"></canvas></div>
+        <div class="skill-card"><canvas id="chartPowerApps"></canvas></div>
+        <div class="skill-card"><canvas id="chartPowerAutomate"></canvas></div>
+        <div class="skill-card"><canvas id="chartExcel"></canvas></div>
+        <div class="skill-card"><canvas id="chartSQL"></canvas></div>
+        <div class="skill-card"><canvas id="chartSharepoint"></canvas></div>
+        <div class="skill-card"><canvas id="chartR"></canvas></div>
+        <div class="skill-card"><canvas id="chartPentaho"></canvas></div>
+        <div class="skill-card"><canvas id="chartFigma"></canvas></div>
+      </div>
+    </main>
+  </div>
 
   <script>
     const skills = {
@@ -237,6 +269,6 @@
       });
     });
   </script>
-
 </body>
+
 </html>
