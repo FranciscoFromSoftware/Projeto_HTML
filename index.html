@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Francisco Henrique Lomas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #0f1117;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      padding: 2rem;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00c6ff;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background-color: #1a1d29;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 198, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card canvas {
+      width: 100px !important;
+      height: 100px !important;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      z-index: 3;
+    }
+
+    .skill-label {
+      color: #e0e0e0;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #10131c;
+      margin-top: 3rem;
+    }
+
+    footer h2 {
+      color: #00c6ff;
+    }
+
+    footer div {
+      margin-top: 1rem;
+    }
+
+    footer a {
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    footer img {
+      width: 40px;
+      height: auto;
+    }
+  </style>
+<header style="padding: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto;">
+      <div style="display: flex; align-items: center;">
+        <img src="sua-foto.jpg" alt="Sua Foto" style="width: 80px; height: 80px; border-radius: 50%; margin-right: 1rem;">
+        <div>
+          <h1 style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; margin-bottom: 0.2rem; color: white;">Francisco Henrique Lomas</h1>
+          <p style="font-size: 1rem; color: white; margin-bottom: 0;">
+            Apaixonado por ficção científica futurista e cyberpunk... (trecho da sua descrição)
+          </p>
+        </div>
+      </div>
+      <div style="text-align: right;">
+        <h2 style="font-family: 'Orbitron', sans-serif; color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">Conecte-se Comigo</h2>
+        <div>
+          <a href="https://github.com/FranciscoFromSoftware" target="_blank" style="margin-left: 0.5rem;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30">
+          </a>
+          <a href="https://www.kaggle.com/franciscohlomas" target="_blank" style="margin-left: 0.5rem;">
+            <img src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle" width="30">
+          </a>
+          <a href="https://www.linkedin.com/in/francisco-henrique-lomas/" target="_blank" style="margin-left: 0.5rem;">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30">
+          </a>
+          <a href="https://rpubs.com/XscientFHL" target="_blank" style="margin-left: 0.5rem;">
+            <img src="https://www.r-project.org/Rlogo.png" alt="RPubs" width="30">
+          </a>
+          </div>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <h2>Habilidades Técnicas</h2>
+    <div class="skills-container">
+      <div class="skill-card"><canvas id="chartPython"></canvas></div>
+      <div class="skill-card"><canvas id="chartPowerBI"></canvas></div>
+      <div class="skill-card"><canvas id="chartPowerApps"></canvas></div>
+      <div class="skill-card"><canvas id="chartPowerAutomate"></canvas></div>
+      <div class="skill-card"><canvas id="chartExcel"></canvas></div>
+      <div class="skill-card"><canvas id="chartSQL"></canvas></div>
+      <div class="skill-card"><canvas id="chartSharepoint"></canvas></div>
+      <div class="skill-card"><canvas id="chartR"></canvas></div>
+      <div class="skill-card"><canvas id="chartPentaho"></canvas></div>
+      <div class="skill-card"><canvas id="chartFigma"></canvas></div>
+    </div>
+  </main>
+
+  <footer>
+    <h2>Conecte-se Comigo</h2>
+    <div>
+      <a href="https://github.com/FranciscoFromSoftware" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      </a>
+      <a href="https://www.kaggle.com/franciscohlomas" target="_blank">
+        <img src="https://www.kaggle.com/static/images/site-logo.png" alt="Kaggle">
+      </a>
+      <a href="https://www.linkedin.com/in/francisco-henrique-lomas/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+      <a href="https://rpubs.com/XscientFHL" target="_blank">
+        <img src="https://www.r-project.org/Rlogo.png" alt="RPubs">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const skills = {
+      chartPython: { label: "Python", value: 82 },
+      chartPowerBI: { label: "Power BI", value: 86 },
+      chartPowerApps: { label: "Power Apps", value: 78 },
+      chartPowerAutomate: { label: "Power Automate", value: 89 },
+      chartExcel: { label: "Excel", value: 94 },
+      chartSQL: { label: "SQL", value: 84 },
+      chartSharepoint: { label: "Sharepoint", value: 92 },
+      chartR: { label: "R", value: 88 },
+      chartPentaho: { label: "Pentaho", value: 76 },
+      chartFigma: { label: "Figma", value: 71 }
+    };
+
+    Object.entries(skills).forEach(([id, { label, value }]) => {
+      const skillCard = document.getElementById(id).parentNode;
+      const percentageSpan = document.createElement('span');
+      percentageSpan.classList.add('skill-percentage');
+      percentageSpan.textContent = `${value}%`;
+      skillCard.appendChild(percentageSpan);
+
+      const labelParagraph = document.createElement('p');
+      labelParagraph.classList.add('skill-label');
+      labelParagraph.textContent = label;
+      skillCard.appendChild(labelParagraph);
+
+      const ctx = document.getElementById(id).getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: [label],
+          datasets: [{
+            data: [value, 100 - value],
+            backgroundColor: ['#00c6ff', 'transparent'],
+            borderWidth: 5,
+            borderColor: ['#00c6ff', 'transparent'],
+            cutout: '80%',
+            circumference: 180,
+            rotation: 270
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutoutPercentage: 80,
+          rotation: -90,
+          circumference: 180,
+          plugins: {
+            tooltip: { enabled: false },
+            legend: { display: false },
+            title: { display: false }
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
